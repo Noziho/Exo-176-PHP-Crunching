@@ -106,6 +106,13 @@ foreach ($top as $key => $value) {
     <p>Réalisateur: <?= $value['im:artist']['label'] ?></p>
     <p>Date de sortie: <?= $value["im:releaseDate"]['attributes']['label'] ?></p>
     <p>Catégorie: <?= $value['category']['attributes']['term'] ?></p>
+    <p>Prix à l'achat: <?= $value['im:price']['label'] ?></p>
+    <?php
+        if (isset($value['im:rentalPrice']['label'])) {?>
+            <p>Prix à la location: <?= $value['im:rentalPrice']['label'] ?></p><?php
+        }
+    ?>
+
 </div>
 <?php
 }
@@ -123,6 +130,6 @@ echo "Il y a ".$thriller. " film de la catégorie Thriller"."<br>";
 echo "Il y a ".$romance. " film de la catégorie Romance"."<br>";
 echo "Il y a ".$western. " film de la catégorie Western"."<br>";
 echo "Il y a ".$documentary. " film de la catégorie Documentary"."<br>";
-echo "Il y a ".$musicDocumentary. " film de la catégorie Music Documentary"."<br>";
-
-echo "La catégorie ayant le plus de film dans le top 100 est Action & Adventure avec ".$actAdventure. " film dans le classement.";
+echo "Il y a ".$musicDocumentary. " film de la catégorie Music Documentary"."<br><br>";
+echo "La catégorie ayant le plus de film dans le top 100 est Action & Adventure avec ".$actAdventure. " film dans le classement."."<br>";
+echo "Acheter le top 10 sur itunes couterait: $152,9 à l'achat et à la location $24,94 . ";
